@@ -32,7 +32,7 @@ public class BeerLoader implements CommandLineRunner {
 		if ( beerRepository.count() == 0 ) {
 			beerRepository.save(Beer.builder()
 				.beerName("Mango Bobs")
-				.beerStyle( BeerStylenum.IPA)
+				.beerStyle("IPA")
 				.quantityToBrew(200)
 				.minOnHand(12)
 				.upc(33701000001L)
