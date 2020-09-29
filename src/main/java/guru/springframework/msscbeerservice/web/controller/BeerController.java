@@ -1,5 +1,8 @@
 package guru.springframework.msscbeerservice.web.controller;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
@@ -22,7 +25,13 @@ public class BeerController {
 
 	@GetMapping("/{beerId}")
 	public ResponseEntity<BeerDto> getBeerbyId(@PathVariable("beerId") UUID beerId) {
-		return new ResponseEntity<>(BeerDto.builder().build(),HttpStatus.OK);
+		return new ResponseEntity<>(BeerDto.builder().beerName("BeerName")
+				.id(UUID.randomUUID())
+				.createdDate(OffsetDateTime.now())
+				.lastModifiedDate(OffsetDateTime.now())
+				.price(new BigDecimal("12.99"))
+				.upc(12312121222L)
+				.build(),HttpStatus.OK);
 	}
 	
 	@PostMapping
