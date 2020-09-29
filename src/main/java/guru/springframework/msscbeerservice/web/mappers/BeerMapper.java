@@ -1,5 +1,7 @@
 package guru.springframework.msscbeerservice.web.mappers;
 
+import java.util.Optional;
+
 import org.mapstruct.Mapper;
 
 import guru.springframework.msscbeerservice.domain.Beer;
